@@ -1,11 +1,14 @@
 //function: find max value of a number list
-function findMax(aNums) {
-    var iMax = aNums[0];
+function findMax(aNums){
+    var iMax = aNums [0];
+    console.log(aNums);
     for(var iCount=0; iCount<aNums.length; iCount++) {
+      //console.log(iCount);
         if(iMax > aNums[iCount]){
-            iMax = aNums[iCount];
+            iMax = aNums[iCount]
         }
     }
+
 
     return iMax;
 }
