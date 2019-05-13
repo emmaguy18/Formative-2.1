@@ -1,15 +1,14 @@
 //function: find max value of a number list
 function findMax(aNums) {
     var iMax = aNums[0];
-
     for(var iCount=0; iCount<aNums.length; iCount++) {
-        if(iMax > aNums[iCount]); {
+        if(iMax > aNums[iCount]){
             iMax = aNums[iCount];
         }
     }
 
     return iMax;
-};
+}
 
 //-----------------------------------------
 
@@ -33,32 +32,30 @@ for (var iCount=0; iCount<iSize; iCount++) {
 };
 
 // processing: calculate average grade for each student and find top grade in class
-var aAverageGrades = [0];
+var aAverageGrades = [];
 
 for(var iCount=0; iCount<iSize; iCount++) {
-    var fAverage = (aGradesPhysics[iCount] + aGradesChemistry[iCount] + aGradesBiology[iCount] / aGradesPhysics.length);
+    var fAverage = (aGradesPhysics[iCount+1] + aGradesChemistry[iCount+1] + aGradesBiology[iCount+1] / aGradesPhysics.length);
     aAverageGrades.push(fAverage);
+}
 
-};
 var iTopGrade = findMax(aAverageGrades);
 
 //output: list result for each student and top grade
 
-for(var iCount=1; iCount < aAverageGrades.length; iCount++){
+for(var iCount=0; iCount < aAverageGrades.length; iCount++){
     if(aAverageGrades[iCount] < 50){
 
       document.write('Student'+(iCount+1)+': Fail<br>');
 
-    } else if(aAverageGrades[iCount] >= 50){
+    } else if (aAverageGrades[iCount] > 50 && aAverageGrades[iCount]< 80){
 
         document.write('Student'+(iCount+1)+': Pass<br>');
 
-    } else if(aAverageGrades[iCount] > 80){
+    } else {
 
         document.write('Student'+(iCount+1)+': Pass with Distinction<br>');
     }
 }
 
-
 document.write('<h1>The top overall grade is ' +iTopGrade+ '</h1>');
-//console.log(iTopGrade);
