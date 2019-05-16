@@ -1,13 +1,13 @@
 //function: find max value of a number list
 function findMax(aNums){
-    var iMax = aNums [0, 15, 25, 35, 45, 55, 65, 75, 85, 95, 100];
-    console.log(aNums);
+    var iMax = aNums [0];
+    //console.log(aNums);
     for(var iCount=0; iCount<aNums.length; iCount++) {
       //console.log(iCount<aNums.length);
         if(iMax > aNums[iCount]){
-            iMax == aNums[iCount]
+            iMax = aNums[iCount];
         }
-        console.log(iMax);
+        //console.log(iMax);
     }
     return iMax;
 }
@@ -28,12 +28,12 @@ for (var iCount=0; iCount<iSize; iCount++) {
     //console.log(iGradePhysics);
     //console.log(aGradesPhysics);
 
-    var iGradeChemistry = parseInt(prompt('Student '+(iCount+1)+': Grade for Biology out of 100'));
+    var iGradeChemistry = parseInt(prompt('Student '+(iCount+1)+': Grade for Chemistry out of 100'));
     aGradesChemistry.push(aGradesChemistry);
     //console.log(iGradeChemistry);
     //console.log(aGradesChemistry);
 
-    var iGradeBiology = parseInt(prompt('Student '+(iCount+1)+': Grade for Chemistry out of 100'));
+    var iGradeBiology = parseInt(prompt('Student '+(iCount+1)+': Grade for Biology out of 100'));
     aGradesBiology.push(aGradesBiology);
     //console.log(iGradeBiology);
     //console.log(aGradesBiology);
@@ -43,11 +43,12 @@ for (var iCount=0; iCount<iSize; iCount++) {
 // processing: calculate average grade for each student and find top grade in class
 var aAverageGrades = [];
 
-for(var iCount=0; iCount < iSize.length; iCount++) {
-    var fAverage = (aGradesPhysics[iCount+1] + aGradesChemistry[iCount+1] + aGradesBiology[iCount+1] / aGradesPhysics.length);
+for(var iCount=0; iCount < iSize; iCount++) {
+    var fAverage = (aGradesPhysics[iCount] + aGradesChemistry[iCount] + aGradesBiology[iCount] / iSize.length);
     //console.log(fAverage);
     aAverageGrades.push(fAverage);
 }
+//console.log(aAverageGrades.push (fAverage));
 
 var iTopGrade = findMax(aAverageGrades);
 
@@ -69,3 +70,4 @@ for(var iCount=0; iCount < aAverageGrades.length; iCount++){
 }
 
 document.write('<h1>The top overall grade is ' +iTopGrade+ '</h1>');
+//console.log(iTopGrade);
