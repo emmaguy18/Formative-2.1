@@ -24,17 +24,17 @@ var aGradesBiology= [];
 //Example parseInt(abc123) will give you 123
 for (var iCount=0; iCount<iSize; iCount++) {
     var iGradePhysics = parseInt(prompt('Student '+(iCount+1)+': Grade for Physics out of 100'));
-    aGradesPhysics.push(aGradesPhysics);
+    aGradesPhysics.push(iGradePhysics);
     //console.log(iGradePhysics);
     //console.log(aGradesPhysics);
 
     var iGradeChemistry = parseInt(prompt('Student '+(iCount+1)+': Grade for Chemistry out of 100'));
-    aGradesChemistry.push(aGradesChemistry);
+    aGradesChemistry.push(iGradeChemistry);
     //console.log(iGradeChemistry);
     //console.log(aGradesChemistry);
 
     var iGradeBiology = parseInt(prompt('Student '+(iCount+1)+': Grade for Biology out of 100'));
-    aGradesBiology.push(aGradesBiology);
+    aGradesBiology.push(iGradeBiology);
     //console.log(iGradeBiology);
     //console.log(aGradesBiology);
 };
@@ -44,7 +44,7 @@ for (var iCount=0; iCount<iSize; iCount++) {
 var aAverageGrades = [];
 
 for(var iCount=0; iCount < iSize; iCount++) {
-    var fAverage = (aGradesPhysics[iCount] + aGradesChemistry[iCount] + aGradesBiology[iCount] / iSize.length);
+    var fAverage = (aGradesPhysics[iCount] + aGradesChemistry[iCount] + aGradesBiology[iCount] / 3);
     //console.log(fAverage);
     aAverageGrades.push(fAverage);
 }
